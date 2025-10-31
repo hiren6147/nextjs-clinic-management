@@ -1,0 +1,25 @@
+# Dependencies
+node_modules
+package-lock.json
+npm-debug.log*
+
+# Build outputs
+.next
+out
+dist
+build
+
+# Environment files
+.env
+.env.local
+.env*.local
+
+# IDE
+.vscode
+.idea
+
+# Misc
+*.log
+.DS_Store
+coverage
+.nyc_output
