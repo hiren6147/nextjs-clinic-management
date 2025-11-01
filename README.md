@@ -50,6 +50,16 @@ Before you begin, ensure you have the following installed:
    bun install
    ```
 
+3. **Set up environment variables**:
+   
+   Create a `.env.local` file in the root directory with the following variables:
+   
+   ```env
+   NEXT_PUBLIC_BASE_URL_API=https://dummyjson.com
+   ```
+   
+   > **Note**: For production deployment, make sure to add these environment variables in your hosting platform (e.g., Vercel).
+
 ## Getting Started
 
 ### Development Server
@@ -131,6 +141,26 @@ To learn more about the technologies used:
 - [TanStack Query](https://tanstack.com/query) - Learn about TanStack Query
 - [Tailwind CSS](https://tailwindcss.com/docs) - Learn Tailwind CSS
 - [shadcn/ui](https://ui.shadcn.com) - Learn about shadcn/ui components
+
+## Environment Variables
+
+The application requires the following environment variables:
+
+- `NEXT_PUBLIC_BASE_URL_API` - The base URL for the API (e.g., `https://dummyjson.com`)
+
+Create a `.env.local` file in the root directory for local development:
+
+```env
+NEXT_PUBLIC_BASE_URL_API=https://dummyjson.com
+```
+
+For production deployments, configure these variables in your hosting platform's environment settings.
+
+## Live Demo
+
+🌐 **Deployed Application**: [https://nextjs-clinic-management.vercel.app/](https://nextjs-clinic-management.vercel.app/)
+
+Visit the live application to see the clinic management system in action.
 
 ## Deploy on Vercel
 
