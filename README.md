@@ -40,6 +40,7 @@ Before you begin, ensure you have the following installed:
    ```
 
 2. **Install dependencies**:
+
    ```bash
    npm install
    # or
@@ -51,13 +52,13 @@ Before you begin, ensure you have the following installed:
    ```
 
 3. **Set up environment variables**:
-   
+
    Create a `.env.local` file in the root directory with the following variables:
-   
+
    ```env
    NEXT_PUBLIC_BASE_URL_API=https://dummyjson.com
    ```
-   
+
    > **Note**: For production deployment, make sure to add these environment variables in your hosting platform (e.g., Vercel).
 
 ## Getting Started
