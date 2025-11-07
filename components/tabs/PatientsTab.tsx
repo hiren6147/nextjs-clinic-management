@@ -43,7 +43,8 @@ export default function PatientsTab() {
 
   const {
     data: patients,
-    isLoading,
+    isPending,
+    isError,
     error,
   } = useQuery({
     queryKey: ["patients", LIMIT, OFFSET],
@@ -185,14 +186,16 @@ export default function PatientsTab() {
     },
   });
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 
-  if (error) {
+  if (isError) {
     return (
       <ErrorComp
-        message={error instanceof Error ? error.message : "An error occurred"}
+        message={
+          error instanceof Error ? error.message : "Failed to load patients"
+        }
       />
     );
   }

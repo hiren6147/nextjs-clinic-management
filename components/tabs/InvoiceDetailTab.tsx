@@ -27,7 +27,8 @@ export default function InvoiceDetailTab({
 }: InvoiceDetailTabProps) {
   const {
     data: invoice,
-    isLoading,
+    isPending,
+    isError,
     error,
   } = useQuery({
     queryKey: ["invoice", initialData?.id],
@@ -42,11 +43,11 @@ export default function InvoiceDetailTab({
 
   const role = useAppSelector((state) => state.auth.role);
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 
-  if (error) {
+  if (isError) {
     return (
       <ErrorComp
         message={error instanceof Error ? error.message : "An error occurred"}

@@ -42,7 +42,8 @@ export default function InvoicesTab() {
   const OFFSET = 0;
   const {
     data: invoices,
-    isLoading,
+    isPending,
+    isError,
     error,
   } = useQuery({
     queryKey: ["invoices", LIMIT, OFFSET],
@@ -166,11 +167,11 @@ export default function InvoicesTab() {
     },
   });
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 
-  if (error) {
+  if (isError) {
     return (
       <ErrorComp
         message={error instanceof Error ? error.message : "An error occurred"}

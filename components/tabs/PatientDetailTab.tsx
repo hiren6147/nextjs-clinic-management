@@ -27,7 +27,7 @@ export default function PatientDetailTab({
 }: PatientDetailTabProps) {
   const {
     data: patient,
-    isLoading,
+    isPending,
     error,
   } = useQuery({
     queryKey: ["patient", initialData?.id],
@@ -42,7 +42,7 @@ export default function PatientDetailTab({
 
   const role = useAppSelector((state) => state.auth.role);
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 

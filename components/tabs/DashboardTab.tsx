@@ -35,21 +35,26 @@ interface StatCard {
 export default function DashboardTab() {
   const {
     data: stats,
-    isLoading,
+    isPending,
+    isError,
     error,
   } = useQuery({
     queryKey: ["dashboard-stats"],
     queryFn: () => apiService.getDashboardStats(),
   });
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 
-  if (error) {
+  if (isError) {
     return (
       <ErrorComp
-        message={error instanceof Error ? error.message : "An error occurred"}
+        message={
+          error instanceof Error
+            ? error.message
+            : "Failed to load dashboard statistics"
+        }
       />
     );
   }
